@@ -76,6 +76,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Actor.cpp" />
+    <ClCompile Include="src\Ai.cpp" />
+    <ClCompile Include="src\Attacker.cpp" />
+    <ClCompile Include="src\Container.cpp" />
+    <ClCompile Include="src\Destructible.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Gui.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\Pickable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Actor.h" />
+    <ClInclude Include="src\Ai.h" />
+    <ClInclude Include="src\Attacker.h" />
+    <ClInclude Include="src\Container.h" />
+    <ClInclude Include="src\Destructible.h" />
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Gui.h" />
+    <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\Map.h" />
+    <ClInclude Include="src\Pickable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
