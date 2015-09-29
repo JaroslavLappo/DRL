@@ -91,3 +91,39 @@ Actor *Engine::getClosestMonster(int x, int y, float range) const
   }
   return closest;
 }
+
+bool Engine::pickATile(int *x, int *y, float maxRange)
+{
+  while (!TCODConsole::isWindowClosed())
+  {
+    render();
+    // highlight the possible range
+    for (int cx = 0; cx < map->width; cx++)
+      for (int cy = 0; cy < map->height; cy++)
+        if (map->isInFov(cx, cy) && (maxRange == 0 || player->getDistance(cx, cy) <= maxRange))
+        {
+          TCODColor col = TCODConsole::root->getCharBackground(cx, cy);
+          col = col * 1.2f;
+          TCODConsole::root->setCharBackground(cx, cy, col);
+        }
+
+    TCODSystem::checkForEvent(TCOD_EVENT_KEY_PRESS | TCOD_EVENT_MOUSE, &lastKey, &mouse);
+
+    if (map->isInFov(mouse.cx, mouse.cy) && (maxRange == 0 || player->getDistance(mouse.cx, mouse.cy) <= maxRange))
+    {
+      TCODConsole::root->setCharBackground(mouse.cx, mouse.cy, TCODColor::white);
+      if (mouse.lbutton_pressed)
+      {
+        *x = mouse.cx;
+        *y = mouse.cy;
+        return true;
+      }
+    }
+
+    if (mouse.rbutton_pressed || lastKey.vk != TCODK_NONE)
+      return false;
+
+    TCODConsole::flush();
+  }
+  return false;
+}
