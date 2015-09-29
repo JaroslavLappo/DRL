@@ -18,6 +18,7 @@ public :
   int screenWidth;
   int screenHeight;
   Gui *gui;
+  Actor *getClosestMonster(int x, int y, float range) const;
   
   Engine(int screenWidth, int screenHeight);
   ~Engine();

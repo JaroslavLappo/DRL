@@ -133,6 +133,9 @@ void Gui::renderMouseLook()
     // find actors under the mouse cursor
     if (actor->x == engine.mouse.cx && actor->y == engine.mouse.cy)
     {
+      if (engine.mouse.rbutton_pressed)
+        return;
+
       if (!first)
         strcat(buf, ", ");
       else

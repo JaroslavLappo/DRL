@@ -7,6 +7,7 @@ public :
   
   char name[NAME_LENGTH]; // the actor's name
   bool blocks; // can we walk on this actor?
+  float getDistance(int cx, int cy) const;
   Attacker *attacker; // something that deals damages
   Destructible *destructible; // something that can be damaged
   Ai *ai; // something self-updating

@@ -12,7 +12,7 @@
 
 #include "libtcod.hpp"
 
-#define NAME_LENGTH 20
+#define NAME_LENGTH 50
 
 class Actor;
 #include "Destructible.h"
