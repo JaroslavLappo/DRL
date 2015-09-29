@@ -29,3 +29,12 @@ public:
   Fireball(float range, float damage);
   bool use(Actor *owner, Actor *wearer);
 };
+
+class Confuser : public Pickable
+{
+public:
+  int nbTurns;
+  float range;
+  Confuser(int nbTurns, float range);
+  bool use(Actor *owner, Actor *wearer);
+};

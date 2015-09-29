@@ -267,10 +267,17 @@ void Map::addItem(int x, int y)
   else if (dice < 70 + 10 + 10)
   {
     // create a scroll of fireball
-    Actor *scrollOfFireball = new Actor(x, y, '#', "scroll of fireball",
-      TCODColor::lightYellow);
+    Actor *scrollOfFireball = new Actor(x, y, '#', "scroll of fireball", TCODColor::lightYellow);
     scrollOfFireball->blocks = false;
     scrollOfFireball->pickable = new Fireball(3, 12);
     engine.actors.push(scrollOfFireball);
+  }
+  else
+  {
+    // create a scroll of confusion
+    Actor *scrollOfConfusion = new Actor(x, y, '#', "scroll of confusion", TCODColor::lightYellow);
+    scrollOfConfusion->blocks = false;
+    scrollOfConfusion->pickable = new Confuser(10, 8);
+    engine.actors.push(scrollOfConfusion);
   }
 }
